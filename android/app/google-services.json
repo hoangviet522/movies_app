@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "512663597759",
+    "firebase_url": "https://mygarment.firebaseio.com",
+    "project_id": "mygarment",
+    "storage_bucket": "mygarment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512663597759:android:17000b9154d4da046fcc0a",
+        "android_client_info": {
+          "package_name": "vn.gitedu.mygarment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512663597759-o6bhu46i3p4cg3qokqqbgglhnsgbo6nn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9NtEfMeAUO471ytN5fjKs4dQuKo9JzlY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "512663597759-o6bhu46i3p4cg3qokqqbgglhnsgbo6nn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
