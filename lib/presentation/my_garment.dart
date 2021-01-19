@@ -5,6 +5,7 @@ import 'package:mygarment/common/constants/languages.dart';
 import 'package:mygarment/di/get_it.dart';
 import 'package:mygarment/presentation/app_localizations.dart';
 import 'package:mygarment/presentation/blocs/language_bloc/language_bloc.dart';
+import 'package:mygarment/presentation/journeys/authentication/sign_in/sign_in_screen.dart';
 import 'package:mygarment/presentation/journeys/home/home_screen.dart';
 import 'package:mygarment/presentation/journeys/splash/splash_screen.dart';
 import '../common/screenutil/screenutil.dart';
@@ -57,7 +58,8 @@ class _MyGarmentState extends State<MyGarment> {
                 GlobalMaterialLocalizations.delegate,
                 GlobalWidgetsLocalizations.delegate
               ],
-              home: HomeScreen(),
+              // home: HomeScreen(),
+              home: SignInScreen(),
               // home: SplashScreen(),
             );
           }

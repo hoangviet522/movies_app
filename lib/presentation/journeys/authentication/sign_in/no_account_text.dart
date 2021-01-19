@@ -24,7 +24,7 @@ class NoAccountText extends StatelessWidget {
           onTap: () {},
           child: Text(
             "  ${TranslationConstants.signup.t(context)}",
-            style: Theme.of(context).textTheme.lightBlueBoldSubtitle1,
+            style: Theme.of(context).textTheme.whiteBoldSubtitle1,
           ),
         ),
       ],

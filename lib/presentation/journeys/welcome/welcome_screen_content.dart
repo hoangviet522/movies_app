@@ -28,7 +28,7 @@ class WelcomeScreenContent extends StatelessWidget {
           ),
           Text(
             item.title,
-            style: Theme.of(context).textTheme.lightBlueHeadline4,
+            style: Theme.of(context).textTheme.whiteHeadline4,
           ),
           Text(
             item.text,

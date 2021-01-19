@@ -10,14 +10,14 @@ import '../../../themes/theme_text.dart';
 class BottomBarItemWidget extends StatelessWidget {
   final Function onPress;
   final bool active;
-  final String title;
+  // final String title;
   final String icon;
 
   const BottomBarItemWidget(
       {Key key,
       @required this.onPress,
       @required this.active,
-      @required this.title,
+      // @required this.title,
       @required this.icon})
       : super(key: key);
   @override
@@ -29,19 +29,20 @@ class BottomBarItemWidget extends StatelessWidget {
         children: <Widget>[
           SvgPicture.asset(
             icon,
-            width: Sizes.dimen_20.sp,
-            color: active ? Colors.lightBlue : Colors.grey,
+            width: Sizes.dimen_24,
+            color: active ? Colors.purple : Colors.grey,
           ),
-          SizedBox(height: Sizes.dimen_6.w),
-          Text(
-            title.t(context),
-            style: active
-                ? Theme.of(context)
-                    .textTheme
-                    .bodyText2
-                    .copyWith(color: Colors.lightBlue)
-                : Theme.of(context).textTheme.bodyText2,
-          )
+
+          // SizedBox(height: Sizes.dimen_6.w),
+          // Text(
+          //   title.t(context),
+          //   style: active
+          //       ? Theme.of(context)
+          //           .textTheme
+          //           .bodyText2
+          //           .copyWith(color: Colors.lightBlue)
+          //       : Theme.of(context).textTheme.bodyText2,
+          // )
         ],
       ),
     );
