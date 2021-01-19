@@ -36,7 +36,7 @@ class SocalCardWidget extends StatelessWidget {
           ),
           Text(
             text,
-            style: Theme.of(context).textTheme.lightBlueSubtitle1,
+            style: Theme.of(context).textTheme.whiteSubtitle1,
           ),
         ],
       ),

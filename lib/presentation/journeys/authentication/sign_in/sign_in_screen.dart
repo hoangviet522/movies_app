@@ -13,14 +13,14 @@ class SignInScreen extends StatelessWidget {
         GestureType.onPanUpdateDownDirection,
       ],
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          automaticallyImplyLeading: true,
-          title: Text(
-            TranslationConstants.signin.t(context),
-            style: Theme.of(context).textTheme.subtitle1,
-          ),
-        ),
+        // appBar: AppBar(
+        //   backgroundColor: Colors.white,
+        //   automaticallyImplyLeading: true,
+        //   title: Text(
+        //     TranslationConstants.signin.t(context),
+        //     style: Theme.of(context).textTheme.subtitle1,
+        //   ),
+        // ),
         body: SignInScreenWidget(),
       ),
     );

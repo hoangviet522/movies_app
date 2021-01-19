@@ -9,7 +9,7 @@ class Logo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Image.asset(
-      'assets/pngs/rsz_2logo.png',
+      'assets/pngs/logo.png',
       height: height.h,
     );
   }

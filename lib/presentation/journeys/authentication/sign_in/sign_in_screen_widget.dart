@@ -12,52 +12,48 @@ import '../../../../common/extensions/string_extensions.dart';
 import '../../../themes/theme_text.dart';
 
 class SignInScreenWidget extends StatelessWidget {
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: Sizes.dimen_40.w),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(height: ScreenUtil.screenHeight * 0.03),
-              Text(
-                TranslationConstants.welcomeBack.t(context),
-                style: Theme.of(context).textTheme.blackHeadline2,
+    return SingleChildScrollView(
+      child: Stack(
+        children: [
+          Container(
+            height: ScreenUtil.screenHeight,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/jpgs/signin_bg.jpeg"),
+                fit: BoxFit.cover,
               ),
-              Text(
-                "${TranslationConstants.signInDesc1.t(context)}\n${TranslationConstants.signInDesc2.t(context)}",
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(height: ScreenUtil.screenHeight * 0.05),
-              SignForm(),
-              SizedBox(height: ScreenUtil.screenHeight * 0.06),
-              SocalCardWidget(
-                  icon: "assets/svgs/google-icon.svg",
-                  press: () {
-                    Navigator.of(context).pushAndRemoveUntil(
-                        MaterialPageRoute(builder: (context) => HomeScreen()),
-                        (Route<dynamic> route) => false);
-                  },
-                  text: TranslationConstants.signInWithGoogle.t(context)),
-              SizedBox(
-                height: Sizes.dimen_4.h,
-              ),
-              SocalCardWidget(
-                icon: "assets/svgs/facebook-2.svg",
-                press: () {
-                  Navigator.of(context).pushAndRemoveUntil(
-                      MaterialPageRoute(builder: (context) => HomeScreen()),
-                      (Route<dynamic> route) => false);
-                },
-                text: TranslationConstants.signInWithFacebook.t(context),
-              ),
-              SizedBox(height: Sizes.dimen_20.h),
-              NoAccountText(),
-            ],
+            ),
           ),
-        ),
+          Container(
+            height: ScreenUtil.screenHeight,
+            width: double.infinity,
+            color: Colors.black.withOpacity(0.5),
+            child: Column(
+              children: [
+                SizedBox(height: Sizes.dimen_48.h),
+                Text(
+                  "Movie",
+                  style: Theme.of(context).textTheme.whiteHeadline2,
+                ),
+                Text(
+                  "place of intertament",
+                  style: Theme.of(context).textTheme.whiteOpacitySubtitle1,
+                ),
+                SizedBox(height: Sizes.dimen_55.h),
+                Text(
+                  "Sign In To Movie",
+                  style: Theme.of(context).textTheme.whiteBoldHeadline5,
+                ),
+                SignForm(),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mygarment/presentation/themes/theme_color.dart';
 import '../../common/constants/size_constants.dart';
 import '../../common/extensions/size_extensions.dart';
 
@@ -24,7 +25,8 @@ class ThemeText {
       _poppinTextTheme.subtitle1.copyWith(fontSize: Sizes.dimen_16.sp);
 
   static TextStyle get subtitle2 =>
-      _poppinTextTheme.subtitle2.copyWith(fontSize: Sizes.dimen_14.sp);
+      _poppinTextTheme.subtitle2.copyWith(fontSize: Sizes.dimen_12.sp);
+
   static getTextTheme() => TextTheme(
         headline6: _headline6,
         subtitle1: subtitle1,
@@ -44,27 +46,33 @@ extension ThemeTextExtension on TextTheme {
         fontWeight: FontWeight.w600,
       );
 
-  TextStyle get lightBlueBoldSubtitle2 => subtitle2.copyWith(
+  TextStyle get whiteBoldSubtitle2 => subtitle2.copyWith(
         fontWeight: FontWeight.w600,
-        color: Colors.lightBlue,
+        color: Colors.white,
       );
 
-  TextStyle get lightBlueBoldSubtitle1 => subtitle1.copyWith(
+  TextStyle get whiteBoldSubtitle1 => subtitle1.copyWith(
         fontWeight: FontWeight.w600,
-        color: Colors.lightBlue,
+        color: Colors.white,
       );
-  TextStyle get lightBlueSubtitle1 => subtitle1.copyWith(
-        color: Colors.lightBlue,
+  TextStyle get whiteSubtitle1 => subtitle1.copyWith(
+        color: Colors.white,
+        fontWeight: FontWeight.w600,
       );
 
-  TextStyle get lightBlueHeadline4 => headline4.copyWith(
+  TextStyle get whiteOpacitySubtitle2 => subtitle2.copyWith(
+        color: Colors.white.withOpacity(0.6),
+        // fontWeight: FontWeight.w600,
+      );
+
+  TextStyle get whiteHeadline4 => headline4.copyWith(
         fontWeight: FontWeight.w600,
-        color: Colors.lightBlue,
+        color: Colors.white,
       );
 
   TextStyle get lightBlueHeadline6 => headline6.copyWith(
         fontWeight: FontWeight.w600,
-        color: Colors.lightBlue,
+        color: Colors.white,
       );
 
   TextStyle get blackHeadline2 => headline2.copyWith(
@@ -74,19 +82,34 @@ extension ThemeTextExtension on TextTheme {
 
   TextStyle get whiteHeadline6 => headline6.copyWith(
         color: Colors.white,
+        fontWeight: FontWeight.bold,
       );
 
-  TextStyle get whiteSubtitle1 => subtitle1.copyWith(
+  TextStyle get whiteHeadline2 => headline2.copyWith(
         color: Colors.white,
+        fontWeight: FontWeight.bold,
       );
 
-  TextStyle get blackBoldHeadline5 => headline5.copyWith(
-        color: Colors.black,
+  // TextStyle get whiteSubtitle1 => subtitle1.copyWith(
+  //       color: Colors.white,
+  //     );
+
+  TextStyle get whiteOpacitySubtitle1 => subtitle1.copyWith(
+        color: Colors.white.withOpacity(0.7),
+      );
+
+  TextStyle get whiteBoldHeadline5 => headline5.copyWith(
+        color: Colors.white,
         fontWeight: FontWeight.w600,
       );
 
   TextStyle get blackBoldHeadline6 => headline6.copyWith(
         color: Colors.black,
+        fontWeight: FontWeight.w600,
+      );
+
+  TextStyle get royalBlueSubtitle1 => subtitle1.copyWith(
+        color: AppColor.royalBlue,
         fontWeight: FontWeight.w600,
       );
 }
