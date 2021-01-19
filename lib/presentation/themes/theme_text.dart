@@ -112,4 +112,14 @@ extension ThemeTextExtension on TextTheme {
         color: AppColor.royalBlue,
         fontWeight: FontWeight.w600,
       );
+
+  TextStyle get royalBlueSubtitle2 => subtitle2.copyWith(
+        color: AppColor.royalBlue,
+        fontWeight: FontWeight.w600,
+      );
+
+  TextStyle get violetSubtitle2 => subtitle2.copyWith(
+        color: AppColor.violet,
+        fontWeight: FontWeight.w600,
+      );
 }

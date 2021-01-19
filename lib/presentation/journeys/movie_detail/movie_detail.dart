@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:mygarment/common/constants/size_constants.dart';
 import 'package:mygarment/common/screenutil/screenutil.dart';
 import 'package:mygarment/presentation/journeys/side_bar_menu/navigation_sidebar.dart';
+import 'package:mygarment/presentation/journeys/video_player/video_player_screen.dart';
 import 'package:mygarment/presentation/themes/theme_color.dart';
 import 'package:mygarment/presentation/widgets/movie_app_bar.dart';
 import '../../../common/extensions/size_extensions.dart';
@@ -216,12 +217,13 @@ class _MovieDetailState extends State<MovieDetail> {
                           ),
                           onPressed: () {
                             // Navigator.pushNamed(context, HomeScreen);
-                            // Navigator.pushReplacement(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //     builder: (BuildContext context) => HomeScreen(),
-                            //   ),
-                            // );
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    VideoPlayerScreen(),
+                              ),
+                            );
                           },
                         ),
                       ),
