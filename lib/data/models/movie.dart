@@ -38,7 +38,7 @@ List<Movie> movies = [
     genra: ["Action", "Drama"],
     plot: plotText,
     releaseDate: "30 Dec, 2020",
-    movieLength: "1hr 44mins",
+    movieLength: "104",
     cast: [
       {
         "orginalName": "James Mangold",
@@ -75,7 +75,7 @@ List<Movie> movies = [
     genra: ["Action", "Drama"],
     plot: plotText,
     releaseDate: "12 Aug, 2029",
-    movieLength: "2hr 00mins",
+    movieLength: "120",
     cast: [
       {
         "orginalName": "James Mangold",
@@ -112,7 +112,7 @@ List<Movie> movies = [
     genra: ["Action", "Drama"],
     plot: plotText,
     releaseDate: "13 Jan, 2028",
-    movieLength: "1hr 39mins",
+    movieLength: "89",
     cast: [
       {
         "orginalName": "James Mangold",
@@ -149,7 +149,7 @@ List<Movie> movies = [
     genra: ["Action", "Drama"],
     plot: plotText,
     releaseDate: "30 Dec, 2020",
-    movieLength: "1hr 44mins",
+    movieLength: "132",
     cast: [
       {
         "orginalName": "James Mangold",
@@ -186,7 +186,7 @@ List<Movie> movies = [
     genra: ["Action", "Biography", "Drama"],
     plot: plotText,
     releaseDate: "30 Dec, 2020",
-    movieLength: "1hr 44mins",
+    movieLength: "98",
     cast: [
       {
         "orginalName": "James Mangold",
@@ -223,7 +223,7 @@ List<Movie> movies = [
     genra: ["Action", "Drama"],
     plot: plotText,
     releaseDate: "30 Dec, 2020",
-    movieLength: "1hr 44mins",
+    movieLength: "89",
     cast: [
       {
         "orginalName": "James Mangold",
