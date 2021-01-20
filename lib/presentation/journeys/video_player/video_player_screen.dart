@@ -66,10 +66,6 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
       builder: (context, player) {
         return Scaffold(
           body: Container(
-            // height: ScreenUtil.screenHeight,
-            // child: Stack(
-            // children: [
-            // Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
                   begin: Alignment.topCenter,
@@ -87,8 +83,6 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                     Color(0xFF07031C),
                   ]),
             ),
-            // ),
-            // Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

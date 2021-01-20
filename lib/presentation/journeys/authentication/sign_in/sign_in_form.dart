@@ -5,6 +5,7 @@ import 'package:mygarment/common/constants/translation_constant.dart';
 import 'package:mygarment/common/screenutil/screenutil.dart';
 import 'package:mygarment/presentation/journeys/home/home_screen.dart';
 import 'package:mygarment/presentation/themes/theme_color.dart';
+import 'package:mygarment/presentation/widgets/common_button.dart';
 import 'package:mygarment/presentation/widgets/custom_surffix_icon.dart';
 import 'package:mygarment/presentation/widgets/default_button.dart';
 import 'package:mygarment/presentation/widgets/form_errors.dart';
@@ -72,31 +73,19 @@ class _SignFormState extends State<SignForm> {
             SizedBox(
               height: Sizes.dimen_16.h,
             ),
-            Container(
-              width: ScreenUtil.screenWidth,
-              decoration: new BoxDecoration(
-                borderRadius: BorderRadius.circular(Sizes.dimen_20.w),
-                gradient: new LinearGradient(
-                  colors: [Colors.blueGrey, Colors.grey],
-                  begin: FractionalOffset.centerLeft,
-                  end: FractionalOffset.centerRight,
-                ),
-              ),
-              child: FlatButton(
-                child: new Text(
-                  'Sign In',
-                  style: Theme.of(context).textTheme.whiteBoldSubtitle1,
-                ),
-                onPressed: () {
-                  // Navigator.pushNamed(context, HomeScreen);
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (BuildContext context) => HomeScreen(),
-                    ),
-                  );
-                },
-              ),
+            CommonButton(
+              height: Sizes.dimen_20.h,
+              text: "Sign In",
+              colorStart: Colors.blueGrey,
+              colorEnd: Colors.grey,
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => HomeScreen(),
+                  ),
+                );
+              },
             ),
             SizedBox(
               height: Sizes.dimen_28.h,

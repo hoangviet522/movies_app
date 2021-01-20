@@ -3,6 +3,7 @@ import 'package:mygarment/common/constants/size_constants.dart';
 import 'package:mygarment/common/screenutil/screenutil.dart';
 import 'package:mygarment/data/models/movie.dart';
 import 'package:mygarment/presentation/themes/theme_color.dart';
+import 'package:mygarment/presentation/widgets/common_button.dart';
 import '../../../common/extensions/size_extensions.dart';
 import '../../themes/theme_text.dart';
 
@@ -82,33 +83,12 @@ class ListFilmCard extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Container(
-                    width: ScreenUtil.screenWidth,
+                  CommonButton(
                     height: Sizes.dimen_12.h,
-                    decoration: new BoxDecoration(
-                      borderRadius: BorderRadius.circular(Sizes.dimen_14.w),
-                      gradient: new LinearGradient(
-                        colors: [AppColor.royalBlue, AppColor.violet],
-                        begin: FractionalOffset.centerLeft,
-                        end: FractionalOffset.centerRight,
-                      ),
-                    ),
-                    child: FlatButton(
-                      child: new Text(
-                        'Watch Trailer',
-                        style: Theme.of(context).textTheme.whiteBoldSubtitle1,
-                      ),
-                      onPressed: () {
-                        // Navigator.pushNamed(context, HomeScreen);
-                        // Navigator.pushReplacement(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //     builder: (BuildContext context) =>
-                        //         VideoPlayerScreen(),
-                        //   ),
-                        // );
-                      },
-                    ),
+                    text: "Watch Trailer",
+                    colorStart: AppColor.royalBlue,
+                    colorEnd: AppColor.violet,
+                    onPressed: () {},
                   ),
                 ],
               ),
@@ -116,23 +96,6 @@ class ListFilmCard extends StatelessWidget {
           ),
         ],
       ),
-      // height: Sizes.dimen_10.h,
-      // child: Row(
-      //   children: [
-      //     Container(
-      //       // height: ScreenUtil.screenWidth * 0.5,
-      //       width: ScreenUtil.screenWidth * 0.5,
-      //       height: Sizes.dimen_55.h,
-      //       decoration: BoxDecoration(
-      //         borderRadius: BorderRadius.circular(20),
-      //         image: DecorationImage(
-      //           image: AssetImage(movie.poster),
-      //           fit: BoxFit.cover,
-      //         ),
-      //       ),
-      //     ),
-      //   ],
-      // ),
     );
   }
 }
