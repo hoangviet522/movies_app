@@ -25,7 +25,7 @@ class ThemeText {
       _poppinTextTheme.subtitle1.copyWith(fontSize: Sizes.dimen_16.sp);
 
   static TextStyle get subtitle2 =>
-      _poppinTextTheme.subtitle2.copyWith(fontSize: Sizes.dimen_12.sp);
+      _poppinTextTheme.subtitle2.copyWith(fontSize: Sizes.dimen_14.sp);
 
   static getTextTheme() => TextTheme(
         headline6: _headline6,
@@ -61,7 +61,7 @@ extension ThemeTextExtension on TextTheme {
       );
 
   TextStyle get whiteOpacitySubtitle2 => subtitle2.copyWith(
-        color: Colors.white.withOpacity(0.6),
+        color: Colors.white.withOpacity(0.4),
         // fontWeight: FontWeight.w600,
       );
 
