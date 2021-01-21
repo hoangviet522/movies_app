@@ -101,6 +101,43 @@ List<Movie> movies = [
   ),
   Movie(
     id: 1,
+    title: "Spider Man",
+    year: 2020,
+    poster: "assets/jpgs/poster_7.jpg",
+    backdrop: "assets/images/backdrop_3.jpg",
+    numOfRatings: 150212,
+    rating: 7.6,
+    criticsReview: 50,
+    metascoreRating: 79,
+    genra: ["Action", "Drama"],
+    plot: plotText,
+    releaseDate: "12 Aug, 2029",
+    movieLength: "120",
+    cast: [
+      {
+        "orginalName": "James Mangold",
+        "movieName": "Director",
+        "image": "assets/images/actor_1.png",
+      },
+      {
+        "orginalName": "Matt Damon",
+        "movieName": "Carroll",
+        "image": "assets/images/actor_2.png",
+      },
+      {
+        "orginalName": "Christian Bale",
+        "movieName": "Ken Miles",
+        "image": "assets/images/actor_3.png",
+      },
+      {
+        "orginalName": "Caitriona Balfe",
+        "movieName": "Mollie",
+        "image": "assets/images/actor_4.png",
+      },
+    ],
+  ),
+  Movie(
+    id: 1,
     title: "Guardians and Galaxy",
     year: 2020,
     poster: "assets/jpgs/poster_3.jpg",
