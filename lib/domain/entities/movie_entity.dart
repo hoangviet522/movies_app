@@ -9,6 +9,11 @@ class MovieEntity extends Equatable {
   final num voteAverage;
   final String releaseDate;
   final String overview;
+  final int runtime;
+  final List<int> genreIds;
+  final String homepage;
+  final List<dynamic> genres;
+  final int key;
 
   const MovieEntity({
     @required this.posterPath,
@@ -18,6 +23,11 @@ class MovieEntity extends Equatable {
     @required this.voteAverage,
     @required this.releaseDate,
     this.overview,
+    this.runtime,
+    this.genreIds,
+    this.homepage,
+    this.genres,
+    this.key,
   }) : assert(id != null, 'Movie id must not be null');
 
   @override

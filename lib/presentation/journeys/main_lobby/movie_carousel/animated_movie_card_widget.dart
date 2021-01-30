@@ -54,12 +54,12 @@ class AnimatedMovieCardWidget extends StatelessWidget {
           );
         }
       },
-      child: MovieCardWidget(
-          // movieId: movieId,
-          // posterPath: posterPath,
-          // movieId: movieId,
-          // posterPath: posterPath,
-          ),
+      // child: MovieCardWidget(
+      //     // movieId: movieId,
+      //     // posterPath: posterPath,
+      //     // movieId: movieId,
+      //     // posterPath: posterPath,
+      //     ),
     );
   }
 }

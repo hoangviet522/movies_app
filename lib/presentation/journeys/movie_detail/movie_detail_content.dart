@@ -1,74 +1,59 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mygarment/common/constants/size_constants.dart';
+import 'package:mygarment/common/screenutil/screenutil.dart';
+import 'package:mygarment/domain/entities/movie_entity.dart';
 import 'package:mygarment/presentation/journeys/video_player/video_player_screen.dart';
 import 'package:mygarment/presentation/themes/theme_color.dart';
 import 'package:mygarment/presentation/widgets/common_button.dart';
 import '../../../common/extensions/size_extensions.dart';
 import '../../themes/theme_text.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class MovieDetailContent extends StatelessWidget {
-  const MovieDetailContent({
-    Key key,
-  }) : super(key: key);
+  final MovieEntity movie;
+
+  const MovieDetailContent({Key key, @required this.movie}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    print(movie.voteAverage);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              "Captain Marvel",
-              style: Theme.of(context).textTheme.whiteHeadline6,
+            Expanded(
+              child: Text(
+                movie.title,
+                style: Theme.of(context).textTheme.whiteHeadline6,
+              ),
             ),
             Row(
               children: [
-                SvgPicture.asset(
-                  "assets/svgs/star.svg",
-                  height: 16,
-                  color: AppColor.violet,
-                ),
-                SizedBox(
-                  width: Sizes.dimen_8.w,
-                ),
-                SvgPicture.asset(
-                  "assets/svgs/star.svg",
-                  height: 16,
-                  color: AppColor.violet,
-                ),
-                SizedBox(
-                  width: Sizes.dimen_8.w,
-                ),
-                SvgPicture.asset(
-                  "assets/svgs/star.svg",
-                  height: 16,
-                  color: AppColor.violet,
-                ),
-                SizedBox(
-                  width: Sizes.dimen_8.w,
-                ),
-                SvgPicture.asset(
-                  "assets/svgs/star.svg",
-                  height: 16,
-                  color: AppColor.violet,
-                ),
-                SizedBox(
-                  width: Sizes.dimen_8.w,
-                ),
-                SvgPicture.asset(
-                  "assets/svgs/star_outline.svg",
-                  height: 16,
-                  color: AppColor.violet,
+                RatingBar.builder(
+                  initialRating: movie.voteAverage / 2,
+                  minRating: 1,
+                  direction: Axis.horizontal,
+                  allowHalfRating: true,
+                  itemCount: 5,
+                  itemPadding:
+                      EdgeInsets.symmetric(horizontal: Sizes.dimen_2.w),
+                  itemBuilder: (context, index) => SvgPicture.asset(
+                    "assets/svgs/star.svg",
+                    color: AppColor.violet,
+                  ),
+                  itemSize: Sizes.dimen_16,
+                  onRatingUpdate: null,
                 ),
               ],
             ),
           ],
         ),
         Text(
-          "MARCH 8, 2019 (TURKEY)",
+          // "MARCH 8, 2019 (TURKEY)",
+          movie.releaseDate,
           style: Theme.of(context).textTheme.whiteOpacitySubtitle2,
         ),
         SizedBox(
@@ -78,16 +63,18 @@ class MovieDetailContent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            Text(
-              "Action  |  Crime  |  Drama  |  Mystery",
-              style: TextStyle(color: AppColor.violet),
-            ),
+            for (var i = 0; i < movie.genres.length; i++)
+              Text(
+                // "Action  |  Crime  |  Drama  |  Mystery",
+                movie.genres[i]['name'],
+                style: TextStyle(color: AppColor.violet),
+              ),
             Row(
               // mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
-                  "108",
+                  movie.runtime.toString(),
                   style: TextStyle(
                     color: AppColor.royalBlue,
                     fontSize: 20,
@@ -108,25 +95,13 @@ class MovieDetailContent extends StatelessWidget {
         SizedBox(
           height: Sizes.dimen_10.h,
         ),
-        Text(
-          "Wonder Woman comes into conflict with the Soviet Union during the Cold War in the 1980s and finds a formidable foe by the name of the Cheetah.",
-          style: Theme.of(context).textTheme.whiteOpacitySubtitle2,
-        ),
-        SizedBox(
-          height: Sizes.dimen_24.h,
-        ),
-        CommonButton(
-          text: "Watch It",
-          colorStart: AppColor.royalBlue,
-          colorEnd: AppColor.violet,
-          onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (BuildContext context) => VideoPlayerScreen(),
-              ),
-            );
-          },
+        Expanded(
+          child: SingleChildScrollView(
+            child: Text(
+              movie.overview,
+              style: Theme.of(context).textTheme.whiteOpacitySubtitle2,
+            ),
+          ),
         ),
       ],
     );

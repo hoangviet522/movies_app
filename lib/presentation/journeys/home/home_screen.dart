@@ -28,8 +28,6 @@ class _HomeScreenState extends State<HomeScreen> {
     MainLobby(),
     SearchScreen(),
     ProfileScreen(),
-    PolicyScreen(),
-    CategoryScreen(),
   ];
 
   @override
