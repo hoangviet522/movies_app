@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:mygarment/data/core/hive_service.dart';
-import 'package:mygarment/data/remote_data_sources/category_remote_data_source.dart';
+import 'package:mygarment/data/data_sources/category_remote_data_source.dart';
 import 'package:mygarment/data/tables/category_table.dart';
 import 'package:mygarment/domain/entities/app_error.dart';
 import 'package:mygarment/domain/entities/category_entity.dart';

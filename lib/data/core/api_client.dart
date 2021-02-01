@@ -10,27 +10,13 @@ class ApiClient {
   ApiClient(this._client);
 
   dynamic get(String path) async {
-    final response =
-        // await _client.get('${ApiConstants.LOCAL_URL}$path', headers: {
-        await _client.get('${ApiConstants.BASE_URL}$path', headers: {
-      'Content-Type': 'application/json',
-    });
-
-    if (response.statusCode == 200) {
-      return json.decode(response.body);
-    } else {
-      throw Exception(response.reasonPhrase);
-    }
-  }
-
-  dynamic post(String path, Map<String, dynamic> params) async {
-    final response = await _client.post(
-      '${ApiConstants.BASE_URL}$path',
+    final response = await _client.get(
+      '${ApiConstants.BASE_URL}$path?api_key=${ApiConstants.API_KEY}',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: json.encode(params),
     );
+
     if (response.statusCode == 200) {
       return json.decode(response.body);
     } else {
@@ -38,3 +24,38 @@ class ApiClient {
     }
   }
 }
+
+// class ApiClient {
+//   final Client _client;
+
+//   ApiClient(this._client);
+
+//   dynamic get(String path) async {
+//     final response =
+//         // await _client.get('${ApiConstants.LOCAL_URL}$path', headers: {
+//         await _client.get('${ApiConstants.BASE_URL}$path', headers: {
+//       'Content-Type': 'application/json',
+//     });
+
+//     if (response.statusCode == 200) {
+//       return json.decode(response.body);
+//     } else {
+//       throw Exception(response.reasonPhrase);
+//     }
+//   }
+
+//   dynamic post(String path, Map<String, dynamic> params) async {
+//     final response = await _client.post(
+//       '${ApiConstants.BASE_URL}$path',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: json.encode(params),
+//     );
+//     if (response.statusCode == 200) {
+//       return json.decode(response.body);
+//     } else {
+//       throw Exception(response.reasonPhrase);
+//     }
+//   }
+// }

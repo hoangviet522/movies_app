@@ -1,22 +1,20 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mygarment/common/constants/size_constants.dart';
 import 'package:mygarment/common/screenutil/screenutil.dart';
-import 'package:mygarment/data/models/movie.dart';
 import 'package:mygarment/domain/entities/movie_entity.dart';
-import 'package:mygarment/presentation/journeys/home/components/movie_card.dart';
-import 'package:mygarment/presentation/journeys/main_lobby/movie_carousel/animated_movie_card_widget.dart';
+import 'package:mygarment/presentation/blocs/movie_backdrop/movie_backdrop_bloc.dart';
+
 import 'package:mygarment/presentation/journeys/main_lobby/movie_carousel/movie_card.dart';
 
-import '../../../themes/theme_text.dart';
 import '../../../../common/extensions/size_extensions.dart';
-import 'dart:math' as math;
 
 class MoviePageView extends StatefulWidget {
-  // final List<MovieEntity> movies;
-  // final int initialPage;
+  final List<MovieEntity> movies;
+  final int initialPage;
 
-  // const MoviePageView({Key key}) : super(key: key);
+  const MoviePageView({Key key, this.movies, this.initialPage})
+      : super(key: key);
 
   @override
   _MoviePageViewState createState() => _MoviePageViewState();
@@ -24,16 +22,12 @@ class MoviePageView extends StatefulWidget {
 
 class _MoviePageViewState extends State<MoviePageView> {
   PageController _pageController;
-  int initialPage = 0;
-
-  Movie movie;
 
   @override
   void initState() {
     super.initState();
     _pageController = PageController(
-      // initialPage: widget.initialPage,
-      initialPage: initialPage,
+      initialPage: widget.initialPage,
       keepPage: false,
       viewportFraction: 0.7,
     );
@@ -47,7 +41,6 @@ class _MoviePageViewState extends State<MoviePageView> {
 
   @override
   Widget build(BuildContext context) {
-    // print(movies.length);
     return Container(
       margin: EdgeInsets.symmetric(
         vertical: Sizes.dimen_10.h,
@@ -55,12 +48,14 @@ class _MoviePageViewState extends State<MoviePageView> {
       height: ScreenUtil.screenHeight * 0.35,
       child: PageView.builder(
         controller: _pageController,
-        itemCount: movies.length,
+        // itemCount: movies.length,
+        itemCount: widget.movies?.length ?? 0,
+        pageSnapping: true,
         itemBuilder: (context, index) => buildMovieCardSlider(index),
         onPageChanged: (index) {
-          // BlocProvider.of<MovieBackdropBloc>(context).add(
-          //   MovieBackdropChangedEvent(widget.movies[index]),
-          // );
+          BlocProvider.of<MovieBackdropBloc>(context).add(
+            MovieBackdropChangedEvent(widget.movies[index]),
+          );
         },
       ),
     );
@@ -100,6 +95,6 @@ class _MoviePageViewState extends State<MoviePageView> {
             );
           }
         },
-        child: MovieCardWidget(movie: movies[index]),
+        child: MovieCardWidget(movie: widget.movies[index]),
       );
 }
