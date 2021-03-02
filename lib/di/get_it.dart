@@ -80,8 +80,12 @@ Future init() async {
         getTopRated: GetTopRated(getItInstance()),
       ));
 
-  getItInstance.registerFactory(() => MovieDetailBloc(
-      getMovieDetail: getItInstance(), videoMovieBloc: getItInstance()));
+  getItInstance.registerFactory(
+    () => MovieDetailBloc(
+      getMovieDetail: getItInstance(),
+      getVideoMovie: GetVideoMovie(getItInstance()),
+    ),
+  );
 
   getItInstance
       .registerFactory(() => VideoMovieBloc(getVideoMovie: getItInstance()));

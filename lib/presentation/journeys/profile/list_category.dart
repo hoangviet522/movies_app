@@ -8,7 +8,7 @@ class ListAction extends StatefulWidget {
 }
 
 class _ListActionState extends State<ListAction> {
-  int selectedAction = 0;
+  int selectedAction = 1;
   List<String> actions = ["Watched", "My List", "Rating"];
 
   @override

@@ -1,14 +1,18 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:mygarment/common/constants/size_constants.dart';
+import 'package:mygarment/controllers/firebase_controller.dart';
 import 'package:mygarment/presentation/themes/theme_color.dart';
 import '../../../common/extensions/size_extensions.dart';
 import '../../themes/theme_text.dart';
+import 'package:get/get.dart';
 
 class ProfileInfo extends StatelessWidget {
-  const ProfileInfo({
-    Key key,
-  }) : super(key: key);
+  // const ProfileInfo({
+  //   Key key,
+  // }) : super(key: key);
+
+  final FirebaseController firebaseController = Get.put(FirebaseController());
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +30,8 @@ class ProfileInfo extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 child: CachedNetworkImage(
                   imageUrl:
-                      'https://i.pinimg.com/474x/61/1f/80/611f80f286b2793b5413819baa375d36.jpg',
+                      // 'https://i.pinimg.com/474x/61/1f/80/611f80f286b2793b5413819baa375d36.jpg',
+                      firebaseController.imgUrl.toString(),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -47,7 +52,8 @@ class ProfileInfo extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Lili Reinhart",
+                        // "Lili Reinhart",
+                        firebaseController.userName.toString(),
                         style: Theme.of(context).textTheme.whiteBoldHeadline5,
                       ),
                       Text(

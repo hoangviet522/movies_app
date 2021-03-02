@@ -38,7 +38,7 @@ class _MyGarmentState extends State<MyGarment> {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'My Garment',
+      title: 'Movies App',
       theme: ThemeData(
         primaryColor: AppColor.lightBlue,
         scaffoldBackgroundColor: Colors.white,

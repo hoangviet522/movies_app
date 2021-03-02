@@ -7,6 +7,7 @@ import 'package:mygarment/domain/entities/movie_entity.dart';
 import 'package:mygarment/domain/entities/movie_params.dart';
 import 'package:mygarment/domain/entities/no_params.dart';
 import 'package:mygarment/domain/usecases/get_movie_detail.dart';
+import 'package:mygarment/domain/usecases/get_video_movie.dart';
 import 'package:mygarment/presentation/blocs/video_movie/video_movie_bloc.dart';
 import 'package:mygarment/presentation/journeys/movie_detail/movie_detail.dart';
 
@@ -15,10 +16,10 @@ part 'movie_detail_state.dart';
 
 class MovieDetailBloc extends Bloc<MovieDetailEvent, MovieDetailState> {
   final GetMovieDetail getMovieDetail;
-  final VideoMovieBloc videoMovieBloc;
+  // final VideoMovieBloc videoMovieBloc;
+  final GetVideoMovie getVideoMovie;
 
-  MovieDetailBloc(
-      {@required this.getMovieDetail, @required this.videoMovieBloc})
+  MovieDetailBloc({@required this.getMovieDetail, @required this.getVideoMovie})
       : super(MovieDetailInitial());
 
   @override
@@ -29,8 +30,13 @@ class MovieDetailBloc extends Bloc<MovieDetailEvent, MovieDetailState> {
       yield MovieDetailLoading();
       final movieDetailEither = await getMovieDetail(MovieParams(event.id));
       yield movieDetailEither.fold(
-          (l) => MovieDetailError(), (r) => MovieDetailLoaded(r));
-      videoMovieBloc.add(VideoMovieLoadEvent(event.id));
+        (l) => MovieDetailError(),
+        (r) => MovieDetailLoaded(r),
+      );
+      // videoMovieBloc.add(VideoMovieLoadEvent(event.id));
+    } else if (event is VideoMovieLoadEvent) {
+      // yield VideoMovieLoading();
+      // final videoMovieEither = await getVideoMovie(MovieParams(event.id));
     }
   }
 }

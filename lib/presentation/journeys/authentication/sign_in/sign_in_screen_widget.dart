@@ -29,28 +29,30 @@ class SignInScreenWidget extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            height: ScreenUtil.screenHeight,
-            width: double.infinity,
-            color: Colors.black.withOpacity(0.5),
-            child: Column(
-              children: [
-                SizedBox(height: Sizes.dimen_48.h),
-                Text(
-                  "Movie",
-                  style: Theme.of(context).textTheme.whiteHeadline2,
-                ),
-                Text(
-                  "place of intertament",
-                  style: Theme.of(context).textTheme.whiteOpacitySubtitle1,
-                ),
-                SizedBox(height: Sizes.dimen_55.h),
-                Text(
-                  "Sign In To Movie",
-                  style: Theme.of(context).textTheme.whiteBoldHeadline5,
-                ),
-                SignForm(),
-              ],
+          Expanded(
+            child: Container(
+              height: ScreenUtil.screenHeight,
+              width: double.infinity,
+              color: Colors.black.withOpacity(0.5),
+              child: Column(
+                children: [
+                  SizedBox(height: Sizes.dimen_40.h),
+                  Text(
+                    "Movie",
+                    style: Theme.of(context).textTheme.whiteHeadline2,
+                  ),
+                  Text(
+                    "place of intertament",
+                    style: Theme.of(context).textTheme.whiteOpacitySubtitle1,
+                  ),
+                  SizedBox(height: Sizes.dimen_40.h),
+                  Text(
+                    "Sign In To Movie",
+                    style: Theme.of(context).textTheme.whiteBoldHeadline5,
+                  ),
+                  SignForm(),
+                ],
+              ),
             ),
           ),
         ],

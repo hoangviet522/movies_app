@@ -10,6 +10,8 @@ abstract class MovieTabbedState extends Equatable {
 
 class MovieTabbedInitial extends MovieTabbedState {}
 
+class MovieTabbedLoadding extends MovieTabbedState {}
+
 class MovieTabChanged extends MovieTabbedState {
   final List<MovieEntity> movies;
 
