@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mygarment/common/constants/size_constants.dart';
 import 'package:mygarment/presentation/journeys/category/category_screen.dart';
@@ -13,6 +14,10 @@ import 'components/movie_carousel.dart';
 import 'components/movie_image_carousel_top_bar.dart';
 
 class HomeScreen extends StatefulWidget {
+  final User user;
+
+  const HomeScreen({Key key, this.user}) : super(key: key);
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -42,6 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // print("aaa ${widget.user}");
     return Scaffold(
       body: _children[currentIndex],
       bottomNavigationBar: Container(
@@ -74,12 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void onScreenTabbed(int index, BuildContext context) {
-    // int tabIndex = index == 0 ? 0 : index;
     int tabIndex = index;
-
-    // if (index == 0) {
-    //   _launchURL();
-    // }
     setState(() {
       currentIndex = tabIndex;
     });

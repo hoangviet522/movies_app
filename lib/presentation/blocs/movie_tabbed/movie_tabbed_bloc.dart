@@ -34,18 +34,23 @@ class MovieTabbedBloc extends Bloc<MovieTabbedEvent, MovieTabbedState> {
     MovieTabbedEvent event,
   ) async* {
     if (event is MovieTabChangedEvent) {
+      // yield MovieTabbedLoadding();
       Either<AppError, List<MovieEntity>> moviesEither;
       switch (event.currentTabIndex) {
         case 0:
+          // yield MovieTabbedLoadding();
           moviesEither = await getTrending(NoParams());
           break;
         case 1:
+          // yield MovieTabbedLoadding();
           moviesEither = await getPlayingNow(NoParams());
           break;
         case 2:
+          // yield MovieTabbedLoadding();
           moviesEither = await getCommingSoon(NoParams());
           break;
         case 3:
+          // yield MovieTabbedLoadding();
           moviesEither = await getTopRated(NoParams());
           break;
       }

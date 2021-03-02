@@ -40,7 +40,11 @@ class _MovieTabbedWidgetState extends State<MovieTabbedWidget> {
   Widget build(BuildContext context) {
     return BlocBuilder<MovieTabbedBloc, MovieTabbedState>(
       builder: (context, state) {
-        if (state is MovieTabChanged) {
+        if (state is MovieTabbedLoadding)
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        else if (state is MovieTabChanged) {
           return Padding(
             padding: EdgeInsets.only(top: Sizes.dimen_1.h),
             child: Column(
@@ -92,6 +96,8 @@ class _MovieTabbedWidgetState extends State<MovieTabbedWidget> {
               ],
             ),
           );
+        } else {
+          return SizedBox.shrink();
         }
       },
     );

@@ -65,7 +65,9 @@ class _MovieDetailState extends State<MovieDetail> {
         child: BlocBuilder<MovieDetailBloc, MovieDetailState>(
           builder: (context, state) {
             if (state is MovieDetailLoading) {
-              return Text("Loading....");
+              return Center(
+                child: CircularProgressIndicator(),
+              );
             } else if (state is MovieDetailLoaded) {
               return Scaffold(
                   floatingActionButton: Padding(
@@ -161,6 +163,8 @@ class _MovieDetailState extends State<MovieDetail> {
                   //   },
                   // ),
                   );
+            } else {
+              return SizedBox.shrink();
             }
           },
         ),

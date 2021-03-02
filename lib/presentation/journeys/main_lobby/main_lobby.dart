@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mygarment/di/get_it.dart';
@@ -9,6 +10,9 @@ import 'package:mygarment/presentation/journeys/main_lobby/movie_tabbed/movie_ta
 import 'package:mygarment/presentation/journeys/side_bar_menu/navigation_sidebar.dart';
 
 class MainLobby extends StatefulWidget {
+  final User user;
+
+  const MainLobby({Key key, this.user}) : super(key: key);
   @override
   _MainLobbyState createState() => _MainLobbyState();
 }
@@ -37,6 +41,8 @@ class _MainLobbyState extends State<MainLobby> {
 
   @override
   Widget build(BuildContext context) {
+    // print("aaa ${widget.user}");
+
     return MultiBlocProvider(
       providers: [
         BlocProvider(
@@ -48,8 +54,6 @@ class _MainLobbyState extends State<MainLobby> {
         BlocProvider(
           create: (context) => movieTabbedBloc,
         ),
-
-        // create: (context) => movieCarouselBloc,
       ],
       child: Scaffold(
           drawer: const NavigationSidebar(),
